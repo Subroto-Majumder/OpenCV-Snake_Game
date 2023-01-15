@@ -36,7 +36,7 @@ class SnakeGameClass:
                 with open("high score.txt", "r") as file_high_score:
                     high_score = int(file_high_score.read())
                 file_high_score.close()
-            except IOError:
+            except (IOError, ValueError):
                 with open("high score.txt", "w") as file_high_score:
                     file_high_score.write("0")
                     high_score = 0
